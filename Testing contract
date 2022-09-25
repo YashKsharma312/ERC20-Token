@@ -12,10 +12,16 @@ describe("Erc20 Contract",function(){
     describe("Test contract", function () {
         it("Should assign the total supply of token to the owner",async function(){
         expect(await contract.totalSupply()).to.equal(1000);});
+        
+        
         it("Should assign the real name of token",async function(){
         expect(await contract.name()).to.equal("Platinum");});
+        
+        
         it("Should assign the real symbol of token",async function(){
         expect(await contract.symbol()).to.equal("PT");});
+        
+        
         it("Should transfer tokens between accounts",async function(){
         await contract.transfer(addr1.address,5);
         const addr1Balance=await contract.balanceOf(addr1.address);
